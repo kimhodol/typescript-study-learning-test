@@ -40,4 +40,22 @@ describe('프로필을 만들고', () => {
       expect(hodol.teammates[0].name).toBe('siyoung');
     });
   });
+
+  describe('_.cloneDeep으로 복사하면', () => {
+    let hodolDeepClone: Profile;
+    beforeEach(() => {
+      hodolDeepClone = _.cloneDeep(hodol);
+    });
+    it('name을 바꿔도 원본은 변하지 않는다.', () => {
+      hodolDeepClone.name = 'poonjang';
+      expect(hodolDeepClone.name).toBe('poonjang');
+      expect(hodol.name).toBe('woonjang');
+    });
+
+    it('teammates의 name을 바꿔도 원본은 변하지 않는다.', () => {
+      hodolDeepClone.teammates[0].name = 'siyoung';
+      expect(hodolDeepClone.teammates[0].name).toBe('siyoung');
+      expect(hodol.teammates[0].name).toBe('kyle');
+    });
+  });
 });
