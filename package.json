@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/lodash": "^4.14.168",
+    "lodash": "^4.17.20",
     "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
@@ -33,7 +35,8 @@
     },
     "testRegex": "\\.spec\\.ts$",
     "moduleFileExtensions": [
-      "ts", "js"
+      "ts",
+      "js"
     ],
     "globals": {
       "ts-jest": {
